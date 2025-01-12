@@ -63,10 +63,11 @@ export class HttpToolkitServerApi extends events.EventEmitter {
         });
 
         this.server.use(cors({
-            origin: ALLOWED_ORIGINS,
+            origin: "*",
             maxAge: 86400 // Cache this result for as long as possible
         }));
 
+        /*
         this.server.use(corsGate({
             strict: true, // MUST send an allowed origin
             allowSafe: false, // Even for HEAD/GET requests
@@ -78,6 +79,7 @@ export class HttpToolkitServerApi extends events.EventEmitter {
                 res.send({ error: { message: 'Invalid CORS headers' }});
             }
         }));
+        */
 
         this.server.use((req, res, next) => {
             if (req.path === '/' && req.method !== 'POST') {
