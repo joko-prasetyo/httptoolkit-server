@@ -160,7 +160,6 @@
     "node": "v20.18.1"
   },
   "keywords": [
-    "http",
     "https",
     "proxy",
     "debugger",
